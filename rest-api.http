@@ -1,0 +1,26 @@
+# curl --location --request POST 'https://10.62.81.6:33743/ace/private/v1/lockbox/keys'
+#--header 'Content-Type: application/json'
+#--header 'Authorization: Basic YWRtaW5pc3RyYXRvckB2c3BoZXJlLmxvY2FsOlRlc3R2eHJhaWwxMjMh'
+#--header 'Content-Type: application/json'
+#--data-raw '{
+#  "lockbox_name": "ACE",
+#  "unique_id": 17734
+#} '
+POST https://10.62.81.6:33743/ace/private/v1/lockbox/keys
+Authorization: Basic YWRtaW5pc3RyYXRvckB2c3BoZXJlLmxvY2FsOlRlc3R2eHJhaWwxMjMh
+Content-Type: application/json, application/json
+
+{
+  "lockbox_name": "ACE",
+  "unique_id": 17734
+}
+
+###
+
+GET http://localhost:8888/index
+Accept: application/json
+
+
+<> 2020-03-28T054933.200.html
+
+###
