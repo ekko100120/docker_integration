@@ -13,7 +13,7 @@ def index():
 if __name__ == "__main__":
     # app.route(os.getenv("host", '127.0.0.1'))
     app.run(
-        host=os.getenv("hostname", "127.0.0.1"),
+        host=os.getenv("hostname", "0.0.0.0"),
         port=os.getenv("port", 8888),
         debug=True
     )

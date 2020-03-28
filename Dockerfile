@@ -15,10 +15,14 @@ RUN cat /tmp/supervisord.conf >> /etc/supervisord.conf && \
     rm /tmp/supervisord.conf
 
 COPY ./src /flask-helloWorld
+COPY ./requirements.txt /flask-helloWorld/requirements.txt
+
 WORKDIR /flask-helloWorld
 
 RUN pip install -r requirements.txt
 
-EXPOSE 9999
+EXPOSE 8888
 
-CMD ["/usr/bin/supervisord", "-nc", "/etc/supervisord.conf"]
+#CMD ["/usr/bin/supervisord", "-nc", "/etc/supervisord.conf"]
+ENTRYPOINT ["python"]
+CMD ["helloWorld.py"]
