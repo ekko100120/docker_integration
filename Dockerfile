@@ -1,11 +1,12 @@
-FROM centos:latest
+FROM ubuntu:latest
 MAINTAINER Kenny <411316753@qq.com>
-RUN yum -y update; yum clean all
-RUN yum -y install python-setuptools
-RUN yum -y install nginx && \
-    easy install pip supervisor && \
-    # echo_supervisord_conf export supervisord config
-    echo_supervisord_conf > /etc/supervisord.conf
+RUN apt-get update
+RUN apt-get  install -y python-pip
+RUN apt-get  install -y python-setuptools
+RUN apt-get  install -y supervisor
+RUN apt-get install -y  nginx
+#echo_supervisord_conf export supervisord config
+RUN echo_supervisord_conf > /etc/supervisord.conf
 
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 COPY ./nginx/helloWorld.conf /etc/nginx/helloWorld.conf
